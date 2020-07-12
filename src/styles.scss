@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+.line {
+    margin: 0 auto;
+    margin-top: 50vh;
+    width: 20%;
+    height: 1px;
+    background-color: black;
+    animation: myline 1s ease-in-out infinite alternate;
+  } 
+  @keyframes myline {
+    0% {
+        transform: scaleX(0.1);
+        -webkit-transform: scaleX(0.1);
+    }
+    100% {
+        transform: scaleX(2.0);
+        -webkit-transform: scaleX(2.0);
+    }
+  }

@@ -1,0 +1,27 @@
+
+<div *ngIf="!dataLoaded" class="line"></div>
+<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="3" [scaleControl]="scalecontrol" [rotateControl]="true">
+    <agm-marker *ngFor="let mark of mapData" [latitude]='mark.lat' [longitude]='mark.longg'></agm-marker>
+</agm-map>
+<div *ngIf="dataLoaded">
+    <h1 style="text-align: center;">Employee List</h1>
+</div>
+<div *ngIf="dataLoaded" class="container">
+    <div class="row">
+        <div *ngFor="let profile of profiles" class="col-sm-6 col-12 col-md-3 imageMain">
+            <div class="cover-photo">
+              <img [src]="profile.image" class="profile">
+            </div>
+            <div class="profile-name">{{profile.name | titlecase}}</div>
+            <h5 class="about">{{profile.empcode}}</h5> 
+            <p >{{profile.category}}</p>
+            <button class="follow-btn" [routerLink]="['/profile',  profile.id]">View Profile</button>
+            <div>
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-youtube"></i>
+              <i class="fab fa-twitter"></i>
+            </div>
+          </div>
+    </div>
+</div>

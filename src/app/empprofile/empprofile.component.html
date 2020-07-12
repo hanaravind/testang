@@ -1,0 +1,30 @@
+<div *ngIf="!dataLoaded" class="line"></div>
+<div *ngIf="dataLoaded">
+<div *ngFor="let profile of filteredProfile" class="wrapper">
+  
+    <div  class="col-1-2">
+      <div class="product-wrap">
+        <div class="product-shot">
+          <img [src]="profile.image" alt="" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-1-2">
+      <div class="product-info">
+        <h2>{{profile.name}}</h2>
+        <p>{{profile.empcode}}</p>
+        <div class="desc">
+          <h5>{{profile.category}}</h5>
+        </div>
+        <div class="desc">
+            <p>{{profile.address}},{{profile.description}}</p>
+        </div>
+        <p>Contact: {{profile.contact}}</p>
+        <a href="#  " class="button">Email</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+  
